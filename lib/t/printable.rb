@@ -121,7 +121,7 @@ module T
         print_identicon(from_user, message)
         say
       when 'auto'
-        say("   @#{from_user}", [:bold, :yellow])
+        say("   @#{from_user}", %i[bold yellow])
         print_wrapped(HTMLEntities.new.decode(message), indent: 3)
       else
         say("   @#{from_user}")
@@ -140,7 +140,7 @@ module T
       lines.unshift(set_color("  @#{from_user}", :bold, :yellow))
       lines.concat(Array.new([3 - lines.length, 0].max) { '' })
 
-      $stdout.puts lines.zip(icon.lines).map { |x, i| "  #{i || '      '}#{x}" }
+      $stdout.puts(lines.zip(icon.lines).map { |x, i| "  #{i || '      '}#{x}" })
     end
 
     def wrapped(message, options = {})

@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 require 'helper'
 
 describe T::List do
@@ -672,9 +673,9 @@ ID        Since         Last tweeted at  Tweets  Favorites  Listed  Following...
         allow($stdout).to receive(:"tty?").and_return(true)
         @list.timeline('presidents')
 
-        names = %w(mutgoff ironicsans pat_shaughnessy calebelston fivethirtyeight
+        names = %w[mutgoff ironicsans pat_shaughnessy calebelston fivethirtyeight
                    codeforamerica fbjork mbostock FakeDorsey al3x BarackObama
-                   JEG2 eveningedition dhh jasonfried sferik dwiskus)
+                   JEG2 eveningedition dhh jasonfried sferik dwiskus]
 
         icons = names.inject({}) { |acc, elem| acc.update(elem.to_sym => T::Identicon.for_user_name(elem)) }
 

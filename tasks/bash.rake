@@ -103,7 +103,7 @@ module BashCompletion
     end
 
     def global_options
-      %w(-H --host -C --color -P --profile)
+      %w[-H --host -C --color -P --profile]
     end
 
     def global_options_args

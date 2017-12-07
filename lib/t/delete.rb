@@ -48,7 +48,7 @@ module T
         end
       end
     end
-    map %w(d m) => :dm
+    map %w[d m] => :dm
 
     desc 'favorite TWEET_ID [TWEET_ID...]', 'Delete favorites.'
     method_option 'force', aliases: '-f', type: :boolean
@@ -70,7 +70,7 @@ module T
         end
       end
     end
-    map %w(fave favourite) => :favorite
+    map %w[fave favourite] => :favorite
 
     desc 'list LIST', 'Delete a list.'
     method_option 'force', aliases: '-f', type: :boolean
@@ -129,6 +129,6 @@ module T
         end
       end
     end
-    map %w(post tweet update) => :status
+    map %w[post tweet update] => :status
   end
 end

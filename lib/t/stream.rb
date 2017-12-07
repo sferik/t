@@ -86,7 +86,7 @@ module T
         end
       end
     end
-    map %w(tl) => :timeline
+    map %w[tl] => :timeline
 
     desc 'matrix', 'Unfortunately, no one can be told what the Matrix is. You have to see it for yourself.'
     def matrix
@@ -97,7 +97,7 @@ module T
       end
       streaming_client.sample(language: 'ja') do |tweet|
         next unless tweet.is_a?(Twitter::Tweet)
-        say(tweet.text.gsub(/[^\u3000\u3040-\u309f]/, '').reverse, [:bold, :green, :on_black], false)
+        say(tweet.text.gsub(/[^\u3000\u3040-\u309f]/, '').reverse, %i[bold green on_black], false)
       end
     end
 

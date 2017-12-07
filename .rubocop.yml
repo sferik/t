@@ -19,6 +19,10 @@ Lint/EndAlignment:
 Metrics/AbcSize:
   Enabled: false
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
 Metrics/BlockNesting:
   Max: 2
 
@@ -59,6 +63,9 @@ Style/EachWithObject:
   Enabled: false
 
 Style/Encoding:
+  Enabled: false
+
+Style/IndentHeredoc:
   Enabled: false
 
 Style/Lambda:
