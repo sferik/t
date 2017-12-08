@@ -13,7 +13,7 @@ group :test do
   gem 'simplecov', '>= 0.9'
   gem 'timecop'
   gem 'tins'
-  gem 'webmock', '>= 1.10.1'
+  gem 'webmock', '>= 3.1.0'
 end
 
 gemspec

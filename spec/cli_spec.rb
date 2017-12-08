@@ -2550,7 +2550,7 @@ ID                   Posted at     Screen name       Text
     context 'with file' do
       before do
         @cli.options = @cli.options.merge('file' => fixture_path + '/long.png')
-        stub_request(:post, 'https://upload.twitter.com/1.1/media/upload.json')
+        stub_request(:post, 'https://upload.twitter.com/1.1/media/upload.json').to_return(body: fixture('media.json'), headers: {content_type: 'application/json; charset=utf-8'})
         stub_post('/1.1/statuses/update.json').to_return(body: fixture('status.json'), headers: {content_type: 'application/json; charset=utf-8'})
       end
       it 'requests the correct resource' do
@@ -3892,13 +3892,13 @@ WOEID     Parent ID  Type       Name           Country
     context 'with file' do
       before do
         @cli.options = @cli.options.merge('file' => fixture_path + '/long.png')
-        stub_request(:post, 'https://upload.twitter.com/1.1/media/upload.json')
+        stub_request(:post, 'https://upload.twitter.com/1.1/media/upload.json').to_return(body: fixture('media.json'), headers: {content_type: 'application/json; charset=utf-8'})
         stub_post('/1.1/statuses/update.json').to_return(body: fixture('status.json'), headers: {content_type: 'application/json; charset=utf-8'})
       end
       it 'requests the correct resource' do
         @cli.update('Testing')
         expect(a_request(:post, 'https://upload.twitter.com/1.1/media/upload.json')).to have_been_made
-        expect(a_post('/1.1/statuses/update_with_media.json')).to have_been_made
+        expect(a_post('/1.1/statuses/update.json')).to have_been_made
       end
       it 'has the correct output' do
         @cli.update('Testing')
