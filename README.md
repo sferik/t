@@ -132,6 +132,10 @@ apostrophes unless you prefix them with a backslash `\`:
 
 #### Follow users
     t follow @sferik @gem
+    
+#### Follow all users from a list
+    
+    t list members -l list | awk '{print $13}' | xargs t follow
 
 #### Check whether one user follows another
     t does_follow @ev @sferik
