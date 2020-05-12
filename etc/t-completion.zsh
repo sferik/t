@@ -298,7 +298,7 @@ _t_reply() {
   _arguments \
     "(-a --all)"{-a,--all}"[Reply to all users mentioned in the Tweet.]" \
     "(-l --location)"{-l,--location}"[Add location information. If the optional \'latitude,longitude\' parameter is not supplied, looks up location by IP address.]" \
-    "(-f --file)"{-f,--file}"[The path to an image to attach to your tweet.]" \
+    "(-f --file)"{-f,--file}"[The path to an image to attach to your tweet.]:file:_files" \
     $t_general_options && ret=0
 }
 
@@ -392,7 +392,7 @@ _t_unfollow() {
 _t_update() {
   _arguments \
     "(-l --location)"{-l,--location}"[Add location information. If the optional \'latitude,longitude\' parameter is not supplied, looks up location by IP address.]" \
-    "(-f --file)"{-f,--file}"[The path to an image to attach to your tweet.]" \
+    "(-f --file)"{-f,--file}"[The path to an image to attach to your tweet.]:file:_files" \
     $t_general_options && ret=0
 }
 
