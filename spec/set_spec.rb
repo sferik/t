@@ -150,4 +150,19 @@ describe T::Set do
       expect($stdout.string.chomp).to eq "@testcli's website has been updated."
     end
   end
+
+  describe 'profile_link_color' do
+    before do
+      @set.options = @set.options.merge('profile' => fixture_path + '/.trc')
+      stub_post('/1.1/account/update_profile.json').with(body: {profile_link_color: '0084B4'}).to_return(body: fixture('sferik.json'), headers: {content_type: 'application/json; charset=utf-8'})
+    end
+    it 'requests the correct resource' do
+      @set.profile_link_color('0084B4')
+      expect(a_post('/1.1/account/update_profile.json').with(body: {profile_link_color: '0084B4'})).to have_been_made
+    end
+    it 'has the correct output' do
+      @set.profile_link_color('0084B4')
+      expect($stdout.string.chomp).to eq "@testcli's profile link color has been updated."
+    end
+  end
 end

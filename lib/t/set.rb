@@ -68,5 +68,12 @@ module T
       client.update_profile(url: uri)
       say "@#{@rcfile.active_profile[0]}'s website has been updated."
     end
+
+    desc 'profile link color', 'Sets a hex value that controls the color scheme of links used on the 
+    authenticating user’s profile page on twitter.com. '
+    def profile_link_color(color_code)
+      client.update_profile(profile_link_color: color_code)
+      say "@#{@rcfile.active_profile[0]}'s profile link color has been updated."
+    end
   end
 end
