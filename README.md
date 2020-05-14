@@ -208,7 +208,7 @@ example, here's how to send a user a direct message only if they already follow 
 
 ## Features
 * Deep search: Instead of using the Twitter Search API, [which only goes
-  back 6-9 days][search], `t search` fetches up to 3,200 tweets via the REST API
+  back 6-9 days][search], `t search` (except `t search all`) fetches up to 3,200 tweets via the REST API
   and then checks each one against a regular expression.
 * Multi-threaded: Whenever possible, Twitter API requests are made in parallel,
   resulting in faster performance for bulk operations.
