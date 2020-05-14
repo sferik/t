@@ -21,6 +21,11 @@ describe T::Editor do
     context 'no $VISUAL or $EDITOR set' do
       before do
         ENV['EDITOR'] = ENV['VISUAL'] = nil
+        @old_host_os = RbConfig::CONFIG['host_os']
+      end
+
+      after do
+        RbConfig::CONFIG['host_os'] = @old_host_os
       end
 
       context 'host_os is Mac OSX' do
@@ -80,6 +85,14 @@ describe T::Editor do
   end
 
   context 'when fetching system editor' do
+    before do
+      @old_host_os = RbConfig::CONFIG['host_os']
+    end
+
+    after do
+      RbConfig::CONFIG['host_os'] = @old_host_os
+    end
+
     context 'on a mac' do
       before do
         RbConfig::CONFIG['host_os'] = 'darwin12.2.0'
