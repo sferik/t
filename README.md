@@ -145,8 +145,8 @@ example, here's how to send a user a direct message only if they already follow 
 #### Create a list for everyone you're following
     t list create following-`date "+%Y-%m-%d"`
 
-#### Add everyone you're following to that list (up to 500 users)
-    t followings | xargs t list add following-`date "+%Y-%m-%d"`
+#### Add everyone you're following to that list
+    t followings | xargs -n 100 t list add following-`date "+%Y-%m-%d"`
 
 #### List all the members of a list, in long format
     t list members -l following-`date "+%Y-%m-%d"`
