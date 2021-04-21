@@ -314,7 +314,7 @@ If you are running t on a remote computer you can use the flag --display-uri dur
     t authorize --display-uri
 
 ## Copyright
-Copyright (c) 2011-2020 Erik Berlin. See [LICENSE][] for details.
+Copyright (c) 2011-2021 Erik Berlin. See [LICENSE][] for details.
 Application icon by [@nvk][nvk].
 
 [license]: https://github.com/sferik/t/blob/master/LICENSE.md
